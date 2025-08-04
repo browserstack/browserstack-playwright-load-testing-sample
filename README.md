@@ -15,4 +15,4 @@ This repo contains samples for running [Playwright](https://playwright.dev/docs/
 - To run the sample tests in parallel across the platforms specified in the `browserstack-load.yaml`, run `npx browserstack-cli load run`.
 
 ## Notes
-* You can view your test results on the [BrowserStack Automate dashboard](https://load.browserstack.com/projects)
+* You can view your test results on the [BrowserStack Load-Testing dashboard](https://load.browserstack.com/projects)
