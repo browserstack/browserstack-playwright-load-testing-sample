@@ -42,4 +42,4 @@ files:
   dependencies:
    - ./package.json                 
   testConfigs: 
-   - path/to/playwright.config.ts
+   - ./playwright.config.js
