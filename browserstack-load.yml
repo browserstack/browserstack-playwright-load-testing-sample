@@ -1,0 +1,45 @@
+# =============================
+# Set BrowserStack Credentials
+# =============================
+# Add your BrowserStack userName and accessKey here or set BROWSERSTACK_USERNAME and BROWSERSTACK_ACCESS_KEY as env variables.
+userName: BROWSERSTACK_USERNAME
+accessKey: BROWSERSTACK_ACCESS_KEY
+
+# ======================
+# BrowserStack Reporting
+# ======================
+# The following parameters are used to set up reporting on BrowserStack Load Testing:
+# Set 'projectName' to the name of your project. Example: 'Product ABC'. Tests under the same projectName will be grouped together.   
+projectName: Default Project
+
+# Set 'testName' to the name of your test. Example: 'First Load Test'. Test runs with the same testName will be grouped together. 
+testName: Default Test
+
+# ======================
+# Set Load Configuration
+# ======================
+# The following parameters are used to set load configuration for your test:
+# Set 'testType' to the type of load test that you want to execute. Example:'Playwright', 'Selenium'. This is a required parameter. 
+testType: Playwright
+
+# Set 'vus' to the maximum number of virtual users to simulate during the test.  
+vus: 1
+
+# Set multiple regions from which you would want to generate the load (percent should total 100 across all loadzones). 
+regions:
+  - loadzone: us-east-1
+    percent: 100 
+
+# Set language to the programming language used in your project. Example: 'java', 'nodejs'.
+language: nodejs
+
+# Set framework to the test framework used in your Selenium project. Example: 'testng'.
+# framework: testng
+
+# Add list of file paths under 'dependencies' to help set up the test environment by installing required packages. Example: path to 'pom.xml' for Java projects using Maven, path to 'package.json' for Node.js projects.
+# Add list of file paths under 'testConfigs' to define which configuration files should be used to run tests. Example: path to 'playwright.config.ts' for Playwright (Node.js), path to 'testng.xml' for Selenium (TestNG). 
+files: 
+  dependencies:
+   - ./package.json                 
+  testConfigs: 
+   - ./playwright.config.js
