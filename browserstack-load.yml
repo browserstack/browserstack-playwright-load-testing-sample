@@ -2,8 +2,8 @@
 # Set BrowserStack Credentials
 # =============================
 # Add your BrowserStack userName and accessKey here or set BROWSERSTACK_USERNAME and BROWSERSTACK_ACCESS_KEY as env variables.
-userName: BROWSERSTACK_USERNAME
-accessKey: BROWSERSTACK_ACCESS_KEY
+#userName: BROWSERSTACK_USERNAME
+#accessKey: BROWSERSTACK_ACCESS_KEY
 
 # ======================
 # BrowserStack Reporting
@@ -24,6 +24,7 @@ testType: Playwright
 
 # Set 'vus' to the maximum number of virtual users to simulate during the test.  
 vus: 1
+duration: 1m
 
 # Set multiple regions from which you would want to generate the load (percent should total 100 across all loadzones). 
 regions:
