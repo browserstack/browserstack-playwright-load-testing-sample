@@ -13,10 +13,20 @@
   "overrides": {
     "qs": "6.14.2",
     "jws": "4.0.1",
-    "tar-fs": "3.1.1"
+    "tar-fs": "3.1.1",
+    "basic-ftp": "^5.2.0",
+    "glob@7.2.3": {
+      "minimatch": "3.1.5"
+    },
+    "glob@8.1.0": {
+      "minimatch": "5.1.9"
+    },
+    "readdir-glob": {
+      "minimatch": "5.1.9"
+    }
   },
   "devDependencies": {
-    "@playwright/test": "1.56.1",
-    "browserstack-node-sdk": "1.40.6"
+    "@playwright/test": "1.58.2",
+    "browserstack-node-sdk": "1.50.3"
   }
 }
