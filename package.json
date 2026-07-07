@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sample-test": "npx browserstack-node-sdk playwright test --config=./playwright.config.js",
-    "postinstall": "npm update browserstack-node-sdk"
+    "sample-test": "npx browserstack-node-sdk playwright test --config=./playwright.config.js"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +30,6 @@
   },
   "devDependencies": {
     "@playwright/test": "1.58.2",
-    "browserstack-node-sdk": "1.50.3"
+    "browserstack-node-sdk": "1.60.1"
   }
 }
