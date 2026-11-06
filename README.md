@@ -6,9 +6,27 @@ This repo contains samples for running [Playwright](https://playwright.dev/docs/
 ## Setup
 
 * Clone the repo `git clone https://github.com/browserstack/browserstack-playwright-load-testing-sample.git`.
-* Set `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` as environment variables with your [BrowserStack Username and Access Key](https://www.browserstack.com/accounts/settings) 
+* Set your credentials as environment variables, as described in [Set your credentials](#set-your-credentials).
 * Run `npm i` to install the dependencies.
-* Update the same in `browserstack-load.yaml` file.
+* Open `browserstack-load.yml` and update it with your load test configuration.
+
+## Set your credentials
+
+The BrowserStack CLI reads your credentials from environment variables. Copy your username and access key from [Account Settings](https://www.browserstack.com/accounts/settings) and export them in the shell you run the test from:
+
+```sh
+# macOS / Linux
+export BROWSERSTACK_USERNAME="<your-username>"
+export BROWSERSTACK_ACCESS_KEY="<your-access-key>"
+```
+
+```powershell
+# Windows (PowerShell)
+$env:BROWSERSTACK_USERNAME = "<your-username>"
+$env:BROWSERSTACK_ACCESS_KEY = "<your-access-key>"
+```
+
+**Never commit your credentials.** Leave the `userName` and `accessKey` placeholders in `browserstack-load.yml` as they are (the environment variables override them), and keep your access key out of every file you push. If a key is ever exposed, regenerate it from Account Settings.
 
 ## Running your tests
 
