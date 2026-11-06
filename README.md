@@ -15,22 +15,27 @@ This repo contains samples for running [Playwright](https://playwright.dev/docs/
 The BrowserStack CLI reads your credentials from environment variables. Copy your username and access key from [Account Settings](https://www.browserstack.com/accounts/settings) and export them in the shell you run the test from:
 
 ```sh
-# macOS / Linux
+# macOS / Linux (bash or zsh)
 export BROWSERSTACK_USERNAME="<your-username>"
-export BROWSERSTACK_ACCESS_KEY="<your-access-key>"
+# Type the key at the prompt: it is not echoed, and it stays out of your shell history
+printf 'BrowserStack access key: '; read -rs BROWSERSTACK_ACCESS_KEY; echo
+export BROWSERSTACK_ACCESS_KEY
 ```
 
 ```powershell
 # Windows (PowerShell)
 $env:BROWSERSTACK_USERNAME = "<your-username>"
-$env:BROWSERSTACK_ACCESS_KEY = "<your-access-key>"
+# Type the key at the prompt: it is not echoed, and it stays out of your PowerShell history
+$env:BROWSERSTACK_ACCESS_KEY = [System.Net.NetworkCredential]::new('', (Read-Host -AsSecureString 'BrowserStack access key')).Password
 ```
+
+These variables last only for the current terminal session. If the CLI reports an authentication error, check that both are set in the terminal you run it from.
 
 **Never commit your credentials.** Leave the `userName` and `accessKey` placeholders in `browserstack-load.yml` as they are (the environment variables override them), and keep your access key out of every file you push. If a key is ever exposed, regenerate it from Account Settings.
 
 ## Running your tests
 
-- To run the sample tests in parallel across the platforms specified in the `browserstack-load.yaml`, run `npx browserstack-cli load run`.
+- To run the sample tests in parallel across the platforms specified in the `browserstack-load.yml`, run `npx browserstack-cli load run`.
 
 ## Notes
 * You can view your test results on the [BrowserStack Load-Testing dashboard](https://load.browserstack.com/projects)
